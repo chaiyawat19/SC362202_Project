@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crystal Hunt in A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/@c-frame/aframe-particle-system-component@1.2.x/dist/aframe-particle-system-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fern-solutions/aframe-sky-background/dist/sky-background.umd.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system/dist/aframe-physics-system.min.js"></script>
+  </head>
+  <body>
+    <a-scene fog="type: exponential; color: #D0D0D0; density: 0.05">
+
+  
+      <!-- คริสตัล -->
+      <a-entity id="crystal1" geometry="primitive: sphere; radius: 0.5" material="color: red" position="2 1 -5" class="crystal"></a-entity>
+      <a-entity id="crystal2" geometry="primitive: sphere; radius: 0.5" material="color: green" position="-3 1 -5" class="crystal"></a-entity>
+      <a-entity id="crystal3" geometry="primitive: sphere; radius: 0.5" material="color: blue" position="0 1 -3" class="crystal"></a-entity>
+    
+
+      <a-entity environment="preset: japan; groundColor: #445; grid: cross"></a-entity>
+      <a-entity id="snow" particle-system="preset: snow; color: #24CAFF; particleCount: 5000"></a-entity>
+      
+      <!-- กล้อง -->
+      <a-camera position="0 1.6 0">
+        <!-- เคอร์เซอร์ -->
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>
+
+
+  </body>
+</html>
