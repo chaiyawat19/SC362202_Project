@@ -95,12 +95,6 @@
       <a-text value="Go to Next Scene!" align="center" position="0 5.5 -10" color="white" scale="2 2 2" font="exo2bold"></a-text>
     </a-entity>
 
-    <!-- Portal (Gate) -->
-    <a-entity id="portal2" visible="false">
-      <a-entity gltf-model="#magic_gate" position="10 0 -10" scale="100 100 100"></a-entity>
-      <a-text value="Go to Next Scene!" align="center" position="0 5.5 -10" color="white" scale="2 2 2" font="exo2bold"></a-text>
-    </a-entity>
-
     <!-- Environment and Snow -->
     <a-entity environment="preset: goaland; grid: cross"></a-entity>
     <a-entity id="snow" particle-system="preset: snow; color: #24CAFF; particleCount: 5000"></a-entity>
@@ -114,7 +108,6 @@
       const crystalSound = document.getElementById('crystalSound');
       const gateSound = document.getElementById('gateSound');
       const portal = document.getElementById('portal');
-      const portal2 = document.getElementById('portal');
 
       // Add event listener for crystals
       document.querySelectorAll('.crystal').forEach(crystal => {
@@ -137,8 +130,6 @@
             if (collected === 5) {
               portal.setAttribute('visible', 'true');
               portal.setAttribute('material', 'opacity: 1');
-              portal2.setAttribute('visible', 'true');
-              portal2.setAttribute('material', 'opacity: 1');
 
               // Play gate opening sound
               gateSound.currentTime = 0;
@@ -150,10 +141,6 @@
 
       portal.addEventListener('click', function () {
       window.location.replace('https://joe9856.github.io/project3D/'); // Navigate to next scene
-      });
-
-      portal2.addEventListener('click', function () {
-      window.location.replace('https://www.google.com/'); // Navigate to next scene
       });
 
     });
